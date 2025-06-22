@@ -23,6 +23,9 @@ batch start
 
 # features
 feature GPS
+feature PWM_OUTPUT_ENABLE
+feature FW_LAUNCH
+feature FW_AUTOTRIM
 
 # beeper
 
@@ -58,6 +61,11 @@ aux 0 0 0 1700 2100
 aux 1 1 2 900 1300
 aux 2 2 2 1300 1700
 aux 3 12 2 1700 2100
+aux 4 10 1 1800 2100
+aux 5 21 3 1800 2100
+aux 6 54 4 1800 2100
+aux 7 13 1 1300 1700
+aux 8 27 5 1900 2100
 
 # Adjustments [adjrange]
 
@@ -69,6 +77,36 @@ aux 3 12 2 1700 2100
 #wp 0 invalid
 
 # OSD [osd_layout]
+osd_layout 0 0 43 19 V
+osd_layout 0 1 38 19 V
+osd_layout 0 3 8 6 V
+osd_layout 0 4 8 6 V
+osd_layout 0 5 0 1 V
+osd_layout 0 6 7 19 V
+osd_layout 0 7 25 4 V
+osd_layout 0 8 0 0 V
+osd_layout 0 9 15 5 V
+osd_layout 0 11 34 5 V
+osd_layout 0 12 8 18 V
+osd_layout 0 14 0 2 V
+osd_layout 0 15 14 4 V
+osd_layout 0 22 26 1 V
+osd_layout 0 23 0 3 V
+osd_layout 0 25 34 8 V
+osd_layout 0 26 34 7 V
+osd_layout 0 28 7 17 H
+osd_layout 0 30 12 16 V
+osd_layout 0 32 41 16 H
+osd_layout 0 34 22 0 V
+osd_layout 0 41 15 10 V
+osd_layout 0 42 24 14 V
+osd_layout 0 85 25 5 V
+osd_layout 0 86 47 0 V
+osd_layout 0 100 34 4 V
+osd_layout 0 112 47 1 V
+osd_layout 0 124 34 13 V
+osd_layout 0 160 47 2 V
+osd_layout 0 162 46 3 V
 
 # Programming: logic
 
@@ -83,9 +121,9 @@ set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
 set gyro_zero_x = -2
-set gyro_zero_y = -9
+set gyro_zero_y = -8
 set gyro_zero_z = 5
-set ins_gravity_cmss =  979.142
+set ins_gravity_cmss =  981.325
 set gyro_adaptive_filter_min_hz = 20
 set acc_hardware = ICM42605
 set acczero_x = -10
@@ -103,9 +141,10 @@ set maggain_x = 1430
 set maggain_y = 1498
 set maggain_z = 1452
 set baro_hardware = SPL06
-set pitot_hardware = VIRTUAL
 set blackbox_rate_denom = 2
 set motor_pwm_protocol = STANDARD
+set failsafe_procedure = RTH
+set servo_pwm_rate = 100
 set small_angle = 180
 set applied_defaults = 3
 set gps_ublox_use_galileo = ON
@@ -115,9 +154,13 @@ set nav_wp_max_safe_distance = 500
 set nav_rth_allow_landing = FS_ONLY
 set nav_rth_altitude = 5000
 set nav_fw_control_smoothness = 2
+set nav_fw_launch_max_angle = 180
 set nav_fw_launch_motor_delay = 100
 set nav_fw_launch_max_altitude = 5000
-set nav_fw_launch_climb_angle = 25
+set nav_fw_launch_climb_angle = 20
+set osd_video_system = DJI_NATIVE
+set osd_units = IMPERIAL
+set name = ZOHD ALTUS
 
 # control_profile
 control_profile 1
@@ -151,7 +194,7 @@ mixer_profile 1
 
 set platform_type = AIRPLANE
 set has_flaps = ON
-set model_preview_type = 14
+set model_preview_type = 28
 
 # Mixer: motor mixer
 
@@ -162,10 +205,12 @@ mmix 0  1.000  0.000  0.000  0.000
 # Mixer: servo mixer
 smix reset
 
-smix 0 1 1 100 0 -1
+smix 0 1 0 100 0 -1
 smix 1 2 0 100 0 -1
-smix 2 3 0 100 0 -1
-smix 3 4 2 100 0 -1
+smix 2 3 1 50 0 -1
+smix 3 3 2 -50 0 -1
+smix 4 4 1 -50 0 -1
+smix 5 4 2 -50 0 -1
 
 # battery_profile
 battery_profile 1
@@ -173,6 +218,8 @@ battery_profile 1
 set bat_cells = 3
 set battery_capacity = 3000
 set throttle_idle =  5.000
+set nav_fw_launch_thr = 1800
+set nav_fw_launch_idle_thr = 1400
 
 # save configuration
 save
