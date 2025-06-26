@@ -1536,9 +1536,9 @@ set setpoint_kalman_enabled = ON
 set setpoint_kalman_q = 100
 set init_gyro_cal = ON
 set gyro_zero_x = -2
-set gyro_zero_y = -8
-set gyro_zero_z = 5
-set ins_gravity_cmss =  981.325
+set gyro_zero_y = -9
+set gyro_zero_z = 6
+set ins_gravity_cmss =  979.918
 set gyro_adaptive_filter_target =  3.500
 set gyro_adaptive_filter_min_hz = 20
 set gyro_adaptive_filter_max_hz = 150
@@ -2017,7 +2017,7 @@ set geozone_mr_stop_distance = 15000
 set geozone_no_way_home_action = RTH
 
 # control_profile
-control_profile 1
+control_profile 3
 
 set mc_p_pitch = 40
 set mc_i_pitch = 30
@@ -2149,7 +2149,7 @@ mixer_profile 1
 set motor_direction_inverted = OFF
 set platform_type = AIRPLANE
 set has_flaps = ON
-set model_preview_type = 28
+set model_preview_type = 34
 set motorstop_on_low = ON
 set mixer_pid_profile_linking = OFF
 set mixer_automated_switch = OFF
@@ -2160,7 +2160,8 @@ set tailsitter_orientation_offset = OFF
 
 mmix reset
 
-mmix 0  1.000  0.000  0.000  0.000
+mmix 0  1.000  0.000  0.000  0.300
+mmix 1  1.000  0.000  0.000 -0.300
 
 # Mixer: servo mixer
 smix reset
@@ -2175,12 +2176,12 @@ smix 5 4 2 -50 0 -1
 # battery_profile
 battery_profile 1
 
-set bat_cells = 3
+set bat_cells = 4
 set vbat_cell_detect_voltage = 425
 set vbat_max_cell_voltage = 420
 set vbat_min_cell_voltage = 330
 set vbat_warning_cell_voltage = 350
-set battery_capacity = 3000
+set battery_capacity = 2200
 set battery_capacity_warning = 0
 set battery_capacity_critical = 0
 set controlrate_profile = 0

@@ -121,9 +121,9 @@ set gyro_main_lpf_hz = 25
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 30
 set gyro_zero_x = -2
-set gyro_zero_y = -8
-set gyro_zero_z = 5
-set ins_gravity_cmss =  981.325
+set gyro_zero_y = -9
+set gyro_zero_z = 6
+set ins_gravity_cmss =  979.918
 set gyro_adaptive_filter_min_hz = 20
 set acc_hardware = ICM42605
 set acczero_x = -10
@@ -163,7 +163,7 @@ set osd_units = IMPERIAL
 set name = ZOHD ALTUS
 
 # control_profile
-control_profile 1
+control_profile 3
 
 set fw_p_pitch = 15
 set fw_i_pitch = 5
@@ -194,13 +194,14 @@ mixer_profile 1
 
 set platform_type = AIRPLANE
 set has_flaps = ON
-set model_preview_type = 28
+set model_preview_type = 34
 
 # Mixer: motor mixer
 
 mmix reset
 
-mmix 0  1.000  0.000  0.000  0.000
+mmix 0  1.000  0.000  0.000  0.300
+mmix 1  1.000  0.000  0.000 -0.300
 
 # Mixer: servo mixer
 smix reset
@@ -215,8 +216,8 @@ smix 5 4 2 -50 0 -1
 # battery_profile
 battery_profile 1
 
-set bat_cells = 3
-set battery_capacity = 3000
+set bat_cells = 4
+set battery_capacity = 2200
 set throttle_idle =  5.000
 set nav_fw_launch_thr = 1800
 set nav_fw_launch_idle_thr = 1400
