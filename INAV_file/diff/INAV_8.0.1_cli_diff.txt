@@ -12,6 +12,8 @@ batch start
 # Timer overrides
 
 # Outputs [servo]
+servo 1 1000 2000 1500 -100
+servo 2 1000 2000 1500 -100
 
 # safehome
 
@@ -65,7 +67,6 @@ aux 4 10 1 1800 2100
 aux 5 21 3 1800 2100
 aux 6 54 4 1800 2100
 aux 7 13 1 1300 1700
-aux 8 27 5 1900 2100
 
 # Adjustments [adjrange]
 
@@ -123,15 +124,15 @@ set dynamic_gyro_notch_min_hz = 30
 set gyro_zero_x = -2
 set gyro_zero_y = -9
 set gyro_zero_z = 6
-set ins_gravity_cmss =  979.918
+set ins_gravity_cmss =  982.621
 set gyro_adaptive_filter_min_hz = 20
 set acc_hardware = ICM42605
-set acczero_x = -10
-set acczero_y = -5
-set acczero_z = 46
+set acczero_x = -8
+set acczero_y = -6
+set acczero_z = 40
 set accgain_x = 4101
-set accgain_y = 4100
-set accgain_z = 4102
+set accgain_y = 4099
+set accgain_z = 4103
 set align_mag = CW270FLIP
 set mag_hardware = NONE
 set magzero_x = -478
@@ -212,6 +213,7 @@ smix 2 3 1 50 0 -1
 smix 3 3 2 -50 0 -1
 smix 4 4 1 -50 0 -1
 smix 5 4 2 -50 0 -1
+smix 6 5 16 90 0 -1
 
 # battery_profile
 battery_profile 1

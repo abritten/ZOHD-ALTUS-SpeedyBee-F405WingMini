@@ -3,15 +3,19 @@ ZOHD ALTUS plane with SpeedyBee F405WingMini FC
 
 [Painless360 Config](https://youtu.be/j2htdXoaSx8?si=Onn92JjaRYtPh_sq)
 
-BOM
+[BOM]()
 
-Circuit
+[Circuit]()
+
+<img src="./resources/camera_tilt.gif" alt="camera_tilt" width="400"/><img src="./resources/v1-0.jpeg" alt="v1" width="400"/>
+
+![OSD](./resources/OSD.png)
+
+<img src="./resources/v1-1.jpeg" alt="v1" width="400"/><img src="./resources/v1-2.jpeg" alt="v1" width="400"/>
 
 ![circuit](./resources/circuit.jpeg)
 
 ![circuit fuselage](./resources/circuit_fuselage.jpeg)
-
-![OSD](./resources/OSD.png)
 
 ![top](./resources/ZOHD-Altus-Twin-Motor-980mm-FPV-Plane-5.jpeg)
 
