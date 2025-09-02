@@ -7,6 +7,10 @@ ZOHD ALTUS plane with SpeedyBee F405WingMini FC
 
 [Circuit]()
 
+[O4 Pro Camera Tilt STL](https://www.thingiverse.com/thing:6998725)
+
+[O4 Pro Fuselage Nose STL](https://www.thingiverse.com/thing:6922017)
+
 <img src="./resources/camera_tilt.gif" alt="camera_tilt" width="400"/><img src="./resources/v1-0.jpeg" alt="v1" width="400"/>
 
 ![OSD](./resources/OSD.png)
